@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
+use App\Models\Colegio;
 use App\Models\Role;
 use App\Models\User;
 use Filament\Forms;
@@ -23,10 +24,10 @@ class UserResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Usuarios'; 
+    protected static ?string $navigationGroup = 'Usuarios';
 
     protected static ?string $navigationLabel = 'Usuarios';
-    
+
     protected function beforeSave($user): void
     {
         if (request()->has('roles')) {
@@ -44,7 +45,7 @@ class UserResource extends Resource
 
                 TextInput::make('email')
                     ->email()
-                    ->unique(ignoreRecord: true)
+                    ->unique()
                     ->required(),
 
                 TextInput::make('password')
@@ -52,6 +53,11 @@ class UserResource extends Resource
                     ->required()
                     ->hiddenOn('edit') // Ocultar en edición para no cambiarlo sin querer
                     ->dehydrateStateUsing(fn($state) => bcrypt($state)), // Encriptar la contraseña
+
+                Select::make('colegio_id')
+                    ->label('Colegio')
+                    ->relationship('colegio', 'nombre')
+                    ->required(),
 
             ]);
     }
@@ -63,7 +69,7 @@ class UserResource extends Resource
                 TextColumn::make('id')->sortable(),
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('email')->sortable()->searchable(),
-                TextColumn::make('created_at')->dateTime(),
+                TextColumn::make('colegio.nombre')->label('Colegio')->sortable()->searchable(),
             ])
             ->filters([
                 //
@@ -94,5 +100,4 @@ class UserResource extends Resource
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }
-    
 }

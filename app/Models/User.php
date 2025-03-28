@@ -50,6 +50,14 @@ class User extends Authenticatable  implements FilamentUser
         ];
     }
 
+    /**
+     * Obtener el colegio al que pertenece el usuario.
+     */
+    public function colegio()
+    {
+        return $this->belongsTo(Colegio::class);
+    }
+
     public function canAccessPanel(Panel $panel): bool
     {
         return $this->hasRole('superadmin');
