@@ -22,7 +22,7 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
 
     protected static ?string $navigationGroup = 'Usuarios';
 
@@ -45,7 +45,7 @@ class UserResource extends Resource
 
                 TextInput::make('email')
                     ->email()
-                    ->unique()
+                    ->unique(ignoreRecord: true)
                     ->required(),
 
                 TextInput::make('password')
@@ -59,6 +59,14 @@ class UserResource extends Resource
                     ->relationship('colegio', 'nombre')
                     ->required(),
 
+                Select::make('roles')
+                    ->label('Roles')
+                    ->multiple()
+                    ->relationship('roles', 'name')
+                    ->preload()
+                    ->searchable()
+                    ->required(),
+
             ]);
     }
 
@@ -70,6 +78,7 @@ class UserResource extends Resource
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('email')->sortable()->searchable(),
                 TextColumn::make('colegio.nombre')->label('Colegio')->sortable()->searchable(),
+                TextColumn::make('roles.name')->label('Roles')->badge()->color('primary'),
             ])
             ->filters([
                 //

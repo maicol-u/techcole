@@ -15,5 +15,9 @@ class Colegio extends Model
     {
         return $this->hasMany(User::class);
     }
-    
+
+    public function contacto()
+    {
+        return $this->hasOne(ColegioContacto::class);
+    }
 }

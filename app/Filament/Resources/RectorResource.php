@@ -17,7 +17,7 @@ class RectorResource extends Resource
 {
     protected static ?string $model = Rector::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user';
 
     protected static ?string $navigationGroup = 'Colegios';
 
@@ -43,7 +43,7 @@ class RectorResource extends Resource
 
                 Forms\Components\TextInput::make('documento')
                     ->label('No. Documento')
-                    ->nullable()
+                    ->required()
                     ->maxLength(100),
 
                 Forms\Components\TextInput::make('celular')
