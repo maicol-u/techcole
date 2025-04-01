@@ -32,6 +32,9 @@ class AdminColegioPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Indigo,
             ])
+            ->resources([
+                \App\Filament\Resources\ColegioContactoResource::class,
+            ])
             ->discoverResources(in: app_path('Filament/AdminColegio/Resources'), for: 'App\\Filament\\AdminColegio\\Resources')
             ->discoverPages(in: app_path('Filament/AdminColegio/Pages'), for: 'App\\Filament\\AdminColegio\\Pages')
             ->pages([
