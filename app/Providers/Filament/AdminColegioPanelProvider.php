@@ -30,7 +30,7 @@ class AdminColegioPanelProvider extends PanelProvider
             ->profile()
             ->passwordReset()
             ->colors([
-                'primary' => Color::Indigo,
+                'primary' => Color::Cyan,
             ])
             ->resources([
                 \App\Filament\Resources\ColegioContactoResource::class,
