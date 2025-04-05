@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\AdminColegio\Resources;
 
-use App\Filament\Resources\RectorResource\Pages;
-use App\Filament\Resources\RectorResource\RelationManagers;
+use App\Filament\AdminColegio\Resources\RectorResource\Pages;
+use App\Filament\AdminColegio\Resources\RectorResource\RelationManagers;
 use App\Models\Rector;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -19,7 +19,7 @@ class RectorResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user';
 
-    protected static ?string $navigationGroup = 'Colegios';
+    protected static ?string $navigationGroup = 'Configuración';
 
     protected static ?string $navigationLabel = 'Rectores';
 

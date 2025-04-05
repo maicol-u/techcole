@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\AdminColegio\Resources;
 
-use App\Filament\Resources\ColegioContactoResource\Pages;
-use App\Filament\Resources\ColegioContactoResource\RelationManagers;
+use App\Filament\AdminColegio\Resources\ColegioContactoResource\Pages;
+use App\Filament\AdminColegio\Resources\ColegioContactoResource\RelationManagers;
 use App\Models\ColegioContacto;
 use Filament\Forms;
 use Filament\Forms\Form;

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\RectorResource\Pages;
+namespace App\Filament\AdminColegio\Resources\RectorResource\Pages;
 
-use App\Filament\Resources\RectorResource;
+use App\Filament\AdminColegio\Resources\RectorResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 

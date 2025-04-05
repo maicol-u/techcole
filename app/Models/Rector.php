@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\ColegioScope;
+use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Model;
 
+#[ScopedBy([ColegioScope::class])]
 class Rector extends Model
 {
     protected $table = 'rectores';

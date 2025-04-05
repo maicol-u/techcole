@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\ColegioContactoResource\Pages;
+namespace App\Filament\AdminColegio\Resources\ColegioContactoResource\Pages;
 
-use App\Filament\Resources\ColegioContactoResource;
+use App\Filament\AdminColegio\Resources\ColegioContactoResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
