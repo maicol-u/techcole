@@ -53,8 +53,6 @@ class SedeResource extends Resource
                         }
                     })
                     ->required()
-                    ->reactive()
-                    ->disabled(fn (callable $get) => !$get('colegio_id'))
 
             ]);
     }
