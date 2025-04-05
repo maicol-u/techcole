@@ -42,7 +42,7 @@ class JornadaResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('colegio.nombre')->label('Colegio'),
+                Tables\Columns\TextColumn::make('colegio.nombre')->label('Colegio')->searchable(),
                 Tables\Columns\TextColumn::make('nombre')->label('Nombre'),
             ])
             ->filters([
