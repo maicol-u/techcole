@@ -23,6 +23,8 @@ class RectorResource extends Resource
 
     protected static ?string $navigationLabel = 'Rectores';
 
+    protected static ?string $pluralModelLabel = 'Rectores';
+
     public static function form(Form $form): Form
     {
         return $form

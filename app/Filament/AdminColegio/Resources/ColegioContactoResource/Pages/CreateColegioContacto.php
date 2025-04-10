@@ -9,4 +9,8 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateColegioContacto extends CreateRecord
 {
     protected static string $resource = ColegioContactoResource::class;
+
+    protected static ?string $title = 'Información de Contacto';
+
+    protected static bool $canCreateAnother = false;
 }

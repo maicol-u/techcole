@@ -10,6 +10,8 @@ class EditColegioContacto extends EditRecord
 {
     protected static string $resource = ColegioContactoResource::class;
 
+    protected static ?string $title = 'Información de Contacto';
+
     protected function getHeaderActions(): array
     {
         return [

@@ -23,6 +23,10 @@ class ColegioContactoResource extends Resource
 
     protected static ?string $navigationLabel = 'Información de Contacto';
 
+    protected static ?string $modelLabel = 'Información';
+
+    protected static ?string $pluralModelLabel = 'Información';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -30,7 +34,8 @@ class ColegioContactoResource extends Resource
                 Forms\Components\Select::make('colegio_id')
                     ->relationship('colegio', 'nombre')
                     ->required()
-                    ->searchable(),
+                    ->searchable()
+                    ->preload(),
 
                 Forms\Components\TextInput::make('direccion')->required(),
                 Forms\Components\TextInput::make('telefono'),
