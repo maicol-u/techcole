@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\DeployWebhookController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/webhadm2025', [DeployWebhookController::class, 'handle']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
